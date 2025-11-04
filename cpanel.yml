@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/kottonsoftllc/public_html/finestbookpublisher.com/
+    - /bin/cp -R * $DEPLOYPATH
