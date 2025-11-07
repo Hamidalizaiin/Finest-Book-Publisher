@@ -37,11 +37,11 @@
 
 
     <header>
-        <div    style="display: flex;; height: 100px;">
+        <div style="display: flex;; height: 100px;">
             <div class="container-fluid" height="100px;">
                 <div class="row">
                     <div class="col-md-2 col-sm-12 logoMainWrap">
-                        <div class="logoMain" style=" height: 100px;" >
+                        <div class="logoMain" style=" height: 100px;">
                             <a href="index.html">
                                 <img src="./logo.png" alt="Logo" style="height: 150px;" />
                             </a>
@@ -50,11 +50,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7 headerMenuMain " style=" height: 100px;" >
+                    <div class="col-md-7 headerMenuMain " style=" height: 100px;">
                         <div class="closeMenu mobileMenuIcon">
                             <img src="https://merriampublishers.com/assets/images/closeMenu.svg" alt="Close Menu" />
                         </div>
-                        <div class="headerMenuWrap" >
+                        <div class="headerMenuWrap">
                             <ul>
                                 <li><a href="index.html">ABOUT US</a></li>
                                 <li class="hasChild parentMenu"><span><a href="javascript:;">Finestwriting <i
@@ -87,7 +87,7 @@
                                         </div>
                                     </span>
                                 </li>
-                       
+
                                 <li class="hasChild parentMenu"><span><a href="javascript:;">Editing & Formatting <i
                                                 class="fa fa-chevron-down" aria-hidden="true"></i></a>
                                         <ul class="dropDown">
@@ -159,36 +159,28 @@
                     </p>
                 </div>
                 <div class="slider-form " data-aos="fade-up" data-form-type="signup_form">
-                    <form class="offr-frm leadForm has-validation-callback" method="post" enctype="multipart/form-data"
-                        action="javascript:void(0)">
+                    <form onsubmit="sendEmail(event)" class="offr-frm leadForm has-validation-callback">
                         <input type="hidden" id="formType" name="formType" />
                         <input type="hidden" id="referer" name="referer" />
                         <div class="row align-items-center justify-content-center no-gutters">
                             <div class="form-inline">
                                 <div class="form-group">
-                                    <div class="icon-bg">
-                                        <i class="sptico icon1"></i>
-                                    </div>
-                                    <input type="text" name="name" placeholder="Enter Your Name " class="form-control"
-                                        data-validation="required">
+                                    <div class="icon-bg"><i class="sptico icon1"></i></div>
+                                    <input type="text" name="name" placeholder="Enter Your Name" class="form-control"
+                                        required>
                                 </div>
                                 <div class="form-group">
-                                    <div class="icon-bg">
-                                        <i class="sptico icon2"></i>
-                                    </div>
-                                    <input type="text" name="email" placeholder="Enter your Email" class="form-control"
-                                        data-validation="required">
+                                    <div class="icon-bg"><i class="sptico icon2"></i></div>
+                                    <input type="email" name="email" placeholder="Enter your Email" class="form-control"
+                                        required>
                                 </div>
                                 <div class="form-group">
-                                    <div class="icon-bg">
-                                        <i class="sptico icon3"></i>
-                                    </div>
+                                    <div class="icon-bg"><i class="sptico icon3"></i></div>
                                     <input type="text" name="phone" placeholder="Enter your Number" class="form-control"
-                                        data-validation="required">
+                                        required>
                                 </div>
                                 <div class="form-group btnsumb">
-                                    <button type="submit" id="signupBtn1" class="btnc btn-1" name=""
-                                        aria-label="Form Button">
+                                    <button type="submit" id="signupBtn1" class="btnc btn-1" aria-label="Form Button">
                                         <i class="fas fa-power-off"></i>
                                     </button>
                                 </div>
@@ -587,8 +579,7 @@
                         "Finest Book Publisher for hire." We systematically explore your book,
                         meticulously curate its content, and ensure timely delivery.
                     </p>
-                    <a href="" class="trustpilot"
-                        target="_blank">
+                    <a href="" class="trustpilot" target="_blank">
                         <span>Review.io</span>
                     </a>
                     <img src="https://merriampublishers.com/assets/images/google.png" class="img-fluid review-img"
@@ -792,8 +783,7 @@
                             </ul>
                         </div>
                         <div class="footerRightWrap">
-                            <span class="FooterMenuTitle"><a
-                                    href="">Ghostwriting</a></span>
+                            <span class="FooterMenuTitle"><a href="">Ghostwriting</a></span>
                             <ul class="FooterMenu lightMenu">
                                 <!-- <li><a href="https://merriampublishers.com/fiction-writing">Fiction</a></li> -->
                                 <li><a href="">Non-Fiction</a></li>
@@ -823,8 +813,7 @@
                         </ul>
                         <div class="copyRightContent">
                             <p>
-                                1550 Wilson Blvd Arlington, VA 22209
-                            </p>
+                                700 Smith St, Houston, TX, United States, Texas </p>
                         </div>
                         <div class="copyRightContent">
                             <p>© 2025 Finest Book Publishers. All Rights Reserved</p>
@@ -866,17 +855,45 @@
         type="text/javascript"></script>
 
     <!-- Start of  Zendesk Widget script -->
-    <script id="ze-snippet"
-        src=""> </script>
-    End of  Zendesk Widget script
+    <script id="ze-snippet" src=""> </script>
+    End of Zendesk Widget script
 
     <script>
         $('.chat, .chatt, .live_chatt').click(function () {
             $zopim.livechat.window.toggle();
         });
     </script>
+
     <!-- Chat Code -->
 
+    <!-- email js -->
+    <script>
+        (function () {
+            // ✅ Initialize EmailJS with your Public Key
+            emailjs.init("9IeUtJjT9sFAUDhhF");
+        })();
+
+        function sendEmail(e) {
+            e.preventDefault();
+
+            // ✅ Send email with your service & template IDs
+            emailjs.send("service_fhpl5f7", "template_cn4iswl", {
+                from_name: document.getElementById("name").value,
+                from_email: document.getElementById("email").value,
+                from_number: document.getElementById("number").value
+            })
+                .then(function (response) {
+                    alert("✅ Message sent successfully!");
+                    console.log("SUCCESS!", response.status, response.text);
+                }, function (error) {
+                    alert("❌ Failed to send. Please try again.");
+                    console.log("FAILED...", error);
+                });
+        }
+    </script>
+
+
+    <!-- email js -->
 </body>
 
 </html>
