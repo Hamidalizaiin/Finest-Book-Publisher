@@ -166,18 +166,18 @@
                             <div class="form-inline">
                                 <div class="form-group">
                                     <div class="icon-bg"><i class="sptico icon1"></i></div>
-                                    <input type="text" name="name" placeholder="Enter Your Name" class="form-control"
-                                        required>
+                                    <input id="name" type="text" name="name" placeholder="Enter Your Name"
+                                        class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <div class="icon-bg"><i class="sptico icon2"></i></div>
-                                    <input type="email" name="email" placeholder="Enter your Email" class="form-control"
-                                        required>
+                                    <input id="email" type="email" name="email" placeholder="Enter your Email"
+                                        class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <div class="icon-bg"><i class="sptico icon3"></i></div>
-                                    <input type="text" name="phone" placeholder="Enter your Number" class="form-control"
-                                        required>
+                                    <input id="number" type="text" name="phone" placeholder="Enter your Number"
+                                        class="form-control" required>
                                 </div>
                                 <div class="form-group btnsumb">
                                     <button type="submit" id="signupBtn1" class="btnc btn-1" aria-label="Form Button">
@@ -867,6 +867,8 @@
     <!-- Chat Code -->
 
     <!-- email js -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <script>
         (function () {
             // ✅ Initialize EmailJS with your Public Key
@@ -875,13 +877,20 @@
 
         function sendEmail(e) {
             e.preventDefault();
-
+            if (!document.getElementById("name").value || !document.getElementById("email").value || !document.getElementById("number").value) {
+                alert("❌ Please fill in all fields.");
+                return;
+            }
             // ✅ Send email with your service & template IDs
             emailjs.send("service_fhpl5f7", "template_cn4iswl", {
                 from_name: document.getElementById("name").value,
                 from_email: document.getElementById("email").value,
                 from_number: document.getElementById("number").value
             })
+
+
+
+
                 .then(function (response) {
                     alert("✅ Message sent successfully!");
                     console.log("SUCCESS!", response.status, response.text);
