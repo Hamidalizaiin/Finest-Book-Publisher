@@ -33,15 +33,15 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="block md:hidden focus:outline-none">
-        <img src="https://merriampublishers.com/assets/images/menuIcon.svg" alt="Menu Icon" class="h-6 w-6" />
+      <button id="menu-btn" class="block md:hidden focus:outline-none" id="menu-btn">
+        <i class="fa-solid fa-bars text-3xl text-white"></i>
       </button>
 
       <!-- Navigation Menu -->
       <nav id="menu"
         class="hidden absolute top-20 left-0 w-full   md:static md:w-auto md:flex md:items-center md:space-x-6 transition-all duration-300">
         <ul class="flex flex-col md:flex-row md:items-center text-white font-medium">
-          <li><a href="./about-us.html" class="block px-4 py-2 hover:text-blue-600">ABOUT US</a></li>
+          <li><a href="../pages/about-us.html" class="block px-4 py-2 hover:text-blue-600">ABOUT US</a></li>
 
           <!-- Dropdown 1 -->
           <li class="group relative">
@@ -102,7 +102,74 @@
           hello@finestbookpublisher.com</a>
       </div>
     </div>
+
+
+    <!-- Mobile Menu (Hidden on Desktop) -->
+    <nav id="mobile-menu"
+  class="hidden md:hidden fixed top-[100px] left-0 w-full bg-white text-[#1D4582] shadow-lg max-h-0 overflow-hidden transition-all duration-300 z-50">
+
+  <ul class="flex flex-col font-medium">
+
+    <li>
+      <a href="../pages/about-us.html"
+         class="block px-6 py-3 border-b border-[#1D4582]/20">
+        ABOUT US
+      </a>
+    </li>
+
+    <!-- Mobile Dropdown 1 -->
+    <li class="border-b border-[#1D4582]/20">
+      <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+        Finest Writing
+        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+      </button>
+      <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Speech Writing</a></li>
+        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Memoir Writing</a></li>
+        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Biography Writing</a></li>
+        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Novel Writing</a></li>
+      </ul>
+    </li>
+
+    <!-- Mobile Dropdown 2 -->
+    <li class="border-b border-[#1D4582]/20">
+      <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+        Editing & Formatting
+        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+      </button>
+      <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Book Editing</a></li>
+      </ul>
+    </li>
+
+    <!-- Mobile Dropdown 3 -->
+    <li class="border-b border-[#1D4582]/20">
+      <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+        Other Services
+        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+      </button>
+      <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Book Publishing</a></li>
+        <li><a href="#" class="block px-6 py-3 hover:bg-gray-200">Cover Design</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#" class="block px-6 py-3">
+        CONTACT
+      </a>
+    </li>
+
+  </ul>
+</nav>
+
   </header>
+
+
+
+
+
+
 
   <main>
 
@@ -636,11 +703,37 @@
     });
 
     const menuBtn = document.getElementById("menu-btn");
-    const menu = document.getElementById("menu");
+    const mobileMenu = document.getElementById("mobile-menu");
 
+    // Toggle main mobile menu
     menuBtn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
+
+      console.log()
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        // mobileMenu.style.display = mobileMenu.scrollHeight + "px";
+      }
     });
+
+    // Dropdown accordions
+    const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const menu = btn.nextElementSibling;
+
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+          
+        } else {
+          menu.classList.add("hidden");
+        }
+      });
+    });
+
+
   </script>
 
 </body>
