@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Children Book Writing — Finest Book Publisher</title>
+
+    <!-- Tailwind CSS (make sure your build includes Tailwind) -->
+    <link href="../../tailwind/outputd.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Optional: AOS for reveal animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <style>
+        /* Floating keyframes */
+        @keyframes float {
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-14px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* subtle glass card */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+        }
+
+        /* small accessibility focus */
+        .focus-ring:focus {
+            outline: 3px solid rgba(29, 69, 130, 0.18);
+            outline-offset: 3px;
+        }
+
+        /* gold accent */
+        .accent-gold {
+            background: linear-gradient(90deg, #ffb86b, #ff9c3b);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-800">
+
+    <header class="primary-background shadow-md">
+        <div class=" container mx-auto flex justify-between items-center px-4 py-4 h-[100px] relative ">
+            <!-- Logo -->
+            <a target="_blank" href="https://finestbookpublisher.com">
+                <img src="../../logo.png" alt="Logo" class="h-[150px]" />
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="block lg:hidden focus:outline-none" id="menu-btn">
+                <i class="fa-solid fa-bars text-3xl text-white"></i>
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav id="menu"
+                class="hidden absolute top-20 left-0 w-full   md:static md:w-auto lg:flex md:items-center md:space-x-6 transition-all duration-300">
+                <ul class="flex flex-col md:flex-row md:items-center text-white font-medium">
+                    <li><a href="../pages/about-us.html" class="block px-4 py-2 hover:text-blue-600">ABOUT US</a></li>
+
+                    <!-- Dropdown 1 -->
+                    <li class="group relative">
+                        <button
+                            class="flex items-center justify-between w-full px-4 py-2 hover:text-blue-600 md:justify-start">
+                            Finest Writing
+                            <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                        <ul
+                            class="hidden group-hover:block text-black  absolute left-0 mt-1 bg-white shadow-lg rounded-md z-50 w-48 text-sm">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Speech Writing</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Memoir Writing</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Biography Writing</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Novel Writing</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Non-Fiction</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Fitness Writing</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Cook Books Writing</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Comic Writing</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Children Book Writing</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Autobiography Writing</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown 2 -->
+                    <li class="group relative">
+                        <button
+                            class="flex items-center justify-between w-full px-4 py-2 hover:text-blue-600 md:justify-start">
+                            Editing & Formatting
+                            <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                        <ul
+                            class="hidden group-hover:block absolute left-0 mt-1 bg-white shadow-lg rounded-md z-10 w-48 text-sm">
+                            <li><a href="#" class="text-black block px-4 py-2 hover:bg-gray-100">Book Editing</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown 3 -->
+                    <li class="group relative">
+                        <button
+                            class="flex items-center justify-between w-full px-4 py-2 hover:text-blue-600 md:justify-start">
+                            Other Services
+                            <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                        <ul
+                            class="hidden group-hover:block absolute left-0 mt-1 bg-white shadow-lg rounded-md z-10 w-48 text-sm">
+                            <li><a href="#" class="text-black  block px-4 py-2 hover:bg-gray-100">Book Publishing</a>
+                            </li>
+                            <li><a href="#" class="text-black block px-4 py-2 hover:bg-gray-100">Cover Design</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" class="block px-4 py-2 hover:text-blue-600">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA Section -->
+            <div
+                class="hidden lg:flex flex-col  justify-between text-white  items-start gap-3 border-l-2 pl-2  border-gray-500">
+
+                <div class="mt-2 text-sm text-white text-left border-b-2 border-gray-500 w-full pb-2">
+                    <a href="tel:+18324646607" class="text-left "><i class="fa fa-phone mr-1"></i> +1 (832) 464-6607</a>
+                </div>
+                <a href="mailto:hello@finestbookpublisher.com" class="text-left"><i
+                        class="fa fa-envelope mr-1 pb-1"></i>
+                    hello@finestbookpublisher.com</a>
+            </div>
+        </div>
+
+
+        <!-- Mobile Menu (Hidden on Desktop) -->
+        <nav id="mobile-menu"
+            class="hidden  fixed top-[100px] left-0 w-full bg-white text-[#1D4582] shadow-lg  overflow-hidden transition-all duration-300 z-50">
+
+            <ul class="flex flex-col font-medium w-full">
+
+                <li>
+                    <a href="../pages/about-us.html" class="block px-6 py-3 border-b border-[#1D4582]/20">
+                        ABOUT US
+                    </a>
+                </li>
+
+                <!-- Mobile Dropdown 1 -->
+                <li class="border-b border-[#1D4582]/20">
+                    <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+                        Finest Writing
+                        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+                    </button>
+                    <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+                        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Speech Writing</a></li>
+                        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Memoir Writing</a></li>
+                        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Biography Writing</a></li>
+                        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Novel Writing</a></li>
+                    </ul>
+                </li>
+
+                <!-- Mobile Dropdown 2 -->
+                <li class="border-b border-[#1D4582]/20">
+                    <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+                        Editing & Formatting
+                        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+                    </button>
+                    <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+                        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Book Editing</a></li>
+                    </ul>
+                </li>
+
+                <!-- Mobile Dropdown 3 -->
+                <li class="border-b border-[#1D4582]/20">
+                    <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+                        Other Services
+                        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+                    </button>
+                    <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+                        <li><a href="#" class="block px-6 py-3 border-b hover:bg-gray-200">Book Publishing</a></li>
+                        <li><a href="#" class="block px-6 py-3 hover:bg-gray-200">Cover Design</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" class="block px-6 py-3">
+                        CONTACT
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="relative w-full h-[460px] md:h-[520px] bg-linear-to-b from-[#1D4582] to-blue-400 flex flex-col justify-center items-center text-center overflow-hidden">
+            <i class="fa fa-child text-5xl text-white absolute left-8 top-10 w-12 opacity-20 animate-float"></i>
+            <i
+                class="fa-solid fa-book text-5xl text-white absolute right-12 bottom-44 w-14 opacity-20 animate-float"></i>
+            <i
+                class="fa-solid fa-star text-4xl text-white hidden md:block absolute left-28 bottom-28 w-10 opacity-52 animate-float"></i>
+
+            <div class="z-10 px-2 md:px-6">
+                <h1 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
+                    Magical Children’s Book Writing That Inspires Young Minds
+                </h1>
+                <p class="text-white/85 max-w-2xl mx-auto text-lg md:text-xl">
+                    We craft imaginative, heartwarming, and educational children’s stories that spark creativity, teach
+                    important values, and keep young readers engaged from start to finish.
+                </p>
+
+                <div class="mt-6 flex flex-col items-center md:flex-row gap-3 justify-center">
+                    <a href="#packages"
+                        class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition">
+                        <i class="fa fa-star text-white"></i> View Story Packages
+                    </a>
+                    <a href="#contact"
+                        class="inline-flex items-center gap-3 px-5 py-3 rounded-full accent-gold text-white font-semibold shadow-lg hover:opacity-95 transition">
+                        <i class="fa fa-paper-plane"></i> Request Consultation
+                    </a>
+                </div>
+
+                <div class="mt-4 text-white/70 text-sm flex items-center justify-center gap-2">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <span>/</span>
+                    <a href="/services" class="hover:text-white">Services</a>
+                    <span>/</span>
+                    <span class="font-medium">Children Book Writing</span>
+                </div>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+                <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,0 C720,120 720,120 1440,0 L1440,120 L0,120 Z" fill="white" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="relative w-full py-24 px-5 md:px-20 overflow-hidden bg-gray-50">
+            <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-16">
+                <div class="flex-1" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+                        Engaging Stories & Creative Lessons
+                    </h2>
+                    <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+                        We specialize in writing children’s books that are fun, educational, and visually captivating.
+                        From
+                        playful narratives to moral lessons, every story nurtures imagination and learning.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div
+                            class="flex items-center gap-4 bg-[#1D4582] text-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                            <i class="fa-solid fa-book-open text-2xl"></i>
+                            <p class="text-white font-medium">Picture Books</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 bg-[#1D4582] text-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                            <i class="fa-solid fa-feather text-2xl"></i>
+                            <p class="text-white font-medium">Bedtime Stories</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 bg-[#1D4582] text-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                            <i class="fa-solid fa-brain text-2xl"></i>
+                            <p class="text-white font-medium">Educational Stories</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 bg-[#1D4582] text-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                            <i class="fa-solid fa-children text-2xl"></i>
+                            <p class="text-white font-medium">Interactive & Fun Tales</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 relative" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="../../images/children-book.jpeg" alt="Children Book Illustration"
+                        class="w-[400px] rounded-3xl shadow-2xl h-[340px] lg:w-auto lg:h-auto">
+                    <div
+                        class="absolute -top-10 -left-10 w-12 h-12 bg-[#1D4582] rounded-full flex items-center justify-center text-white font-bold text-lg animate-bounce">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -right-12 w-14 h-14 bg-[#1D4582] rounded-full flex items-center justify-center text-white font-bold text-lg animate-bounce">
+                        <i class="fa-solid fa-child"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types Section -->
+        <section class="relative w-full py-24 px-5 md:px-20 bg-linear-to-b from-[#1D4582] to-blue-400 overflow-hidden">
+            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Children’s Book Types</h2>
+                <p class="text-white text-lg leading-relaxed">
+                    Explore the types of children’s books we write to inspire, entertain, and educate.
+                </p>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-[#1D4582] text-white rounded-full text-2xl mb-4">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Picture Books</h3>
+                    <p class="text-gray-600 leading-relaxed">Beautifully illustrated books for young children to learn
+                        and play.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-[#1D4582] text-white rounded-full text-2xl mb-4">
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Bedtime Stories</h3>
+                    <p class="text-gray-600 leading-relaxed">Engaging tales that make bedtime special and enjoyable.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-[#1D4582] text-white rounded-full text-2xl mb-4">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Educational Stories</h3>
+                    <p class="text-gray-600 leading-relaxed">Stories designed to teach morals, skills, and knowledge in
+                        fun ways.</p>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <div
+                        class="w-16 h-16 flex items-center justify-center bg-[#1D4582] text-white rounded-full text-2xl mb-4">
+                        <i class="fa-solid fa-child"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Interactive Tales</h3>
+                    <p class="text-gray-600 leading-relaxed">Stories with activities, questions, and illustrations for
+                        kids to participate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Writing Process Section -->
+        <section class="relative w-full py-32 px-4 md:px-12 bg-[#f8fafd] overflow-hidden">
+            <div class="max-w-6xl mx-auto relative">
+                <div class="text-center mb-24" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4">Children’s Book Writing Process
+                    </h2>
+                    <p class="text-gray-700 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+                        Step by step, we create enchanting stories that captivate and educate young readers.
+                    </p>
+                </div>
+
+                <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#1D4582]/20">
+                </div>
+
+                <div class="flex flex-col lg:flex-col gap-16">
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col lg:flex-row justify-start items-center">
+                        <div
+                            class="flex flex-col items-center lg:items-end w-full lg:w-1/2 pr-0 lg:pr-12 text-center lg:text-right mb-8 lg:mb-0">
+                            <div
+                                class="w-20 h-20 bg-[#1D4582] text-white rounded-full flex items-center justify-center text-3xl shadow-lg mb-6">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900">Concept & Story Planning</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">Brainstorm story ideas, themes, and
+                                characters.</p>
+                        </div>
+                        <div class="w-full lg:w-1/2"></div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col lg:flex-row-reverse justify-end items-center">
+                        <div
+                            class="flex flex-col items-center lg:items-start w-full lg:w-1/2 pl-0 lg:pl-12 text-center lg:text-left mb-8 lg:mb-0">
+                            <div
+                                class="w-20 h-20 bg-[#1D4582] text-white rounded-full flex items-center justify-center text-3xl shadow-lg mb-6">
+                                <i class="fas fa-pen-fancy"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900">Writing & Illustrating</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">Craft compelling text and visuals for
+                                children.</p>
+                        </div>
+                        <div class="w-full lg:w-1/2"></div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col lg:flex-row justify-start items-center">
+                        <div
+                            class="flex flex-col items-center lg:items-end w-full lg:w-1/2 pr-0 lg:pr-12 text-center lg:text-right mb-8 lg:mb-0">
+                            <div
+                                class="w-20 h-20 bg-[#1D4582] text-white rounded-full flex items-center justify-center text-3xl shadow-lg mb-6">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900">Editing & Review</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">Refine language, style, and illustrations
+                                for final quality.</p>
+                        </div>
+                        <div class="w-full lg:w-1/2"></div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col lg:flex-row-reverse justify-end items-center">
+                        <div
+                            class="flex flex-col items-center lg:items-start w-full lg:w-1/2 pl-0 lg:pl-12 text-center lg:text-left mb-8 lg:mb-0">
+                            <div
+                                class="w-20 h-20 bg-[#1D4582] text-white rounded-full flex items-center justify-center text-3xl shadow-lg mb-6">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-900">Publish & Inspire</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">Deliver enchanting stories that delight and
+                                educate children worldwide.</p>
+                        </div>
+                        <div class="w-full lg:w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="w-full bg-white py-20">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-1 bg-[#1D4582]"></div>
+                        <span class="text-[#1D4582] tracking-wide font-medium">STAY UPDATED</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                        Get Exclusive Tips & Story Updates
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed max-w-md">
+                        Subscribe to receive tips, story previews, and offers straight to your inbox.
+                    </p>
+                </div>
+                <div class="bg-gray-50 border border-gray-200 p-8 rounded-3xl shadow-lg" data-aos="fade-left">
+                    <form class="flex flex-col md:flex-row gap-4">
+                        <input type="email" placeholder="Enter your email address"
+                            class="w-full md:flex-1 px-5 py-4 rounded-xl bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-4 focus:ring-[#1D4582]/30 outline-none" />
+                        <button
+                            class="px-8 py-4 bg-[#1D4582] text-white font-semibold rounded-xl shadow-lg hover:bg-[#163966] transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-lg"></i> Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="bg-[#1D4582] text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
+
+            <!-- Left Section -->
+            <div data-aos="fade-right">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-snug">
+                    Crafting Stories, <strong>Now Just a Click Away</strong>
+                </h2>
+
+                <ul class="mb-6 space-y-3">
+                    <li>
+                        <a href="mailto:Hello@finestbookpublisher.com" class="hover:text-blue-300">
+                            Hello@finestbookpublisher.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+18324646607" class="hover:text-blue-300">+1 (832) 464-6607</a>
+                    </li>
+                </ul>
+
+                <ul class="flex space-x-4 mt-4">
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61583069261828" target="_blank"
+                            class="hover:text-blue-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/finestbook_publisher/" target="_blank"
+                            class="hover:text-blue-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="hover:text-blue-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Section -->
+            <div data-aos="fade-left" class="grid md:grid-cols-3 gap-8">
+
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-lg">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Cover Design</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Fantasy Writing</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Horror Writing</a></li>
+                        <li><a href="#" class="hover:text-blue-300">SCI-FI Writing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-lg">Ghostwriting</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Non-Fiction</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Biography Writing</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Memoir Writing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-lg">Book Editing & Publishing</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Formatting</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Book Publishing</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="border-t border-white/30 mt-8 pt-6 text-center text-gray-200 text-sm">
+            <p>700 Smith St, Houston, TX, United States, Texas</p>
+            <p>© 2025 Finest Book Publishers. All Rights Reserved</p>
+            <p class="mt-2 font-medium">Embark Your Journey with Our Sales-Driven Book Writing Services!</p>
+        </div>
+
+        <!-- Footer Decorative Image -->
+        <img src="https://merriampublishers.com/assets/images/footer-img.png" alt=""
+            class="absolute right-0 bottom-0 w-32 md:w-48 opacity-20 pointer-events-none">
+
+    </footer>
+
+    <!-- ===== Scripts ===== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        const menuBtn = document.querySelector("#menu-btn");
+        const mobileMenu = document.querySelector("#mobile-menu");
+
+        // Toggle main mobile menu
+        menuBtn.addEventListener("click", () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                // mobileMenu.style.display = mobileMenu.scrollHeight + "px";
+            }
+        });
+
+        // Dropdown accordions
+        const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const menu = btn.nextElementSibling;
+
+                if (menu.classList.contains("hidden")) {
+                    menu.classList.remove("hidden");
+
+                } else {
+                    menu.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
