@@ -14,12 +14,13 @@ function contactSupport(e) {
         phone: document.getElementById("phone").value,
         message: document.getElementById("message").value
     }).then(function () {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("message").value = "";
+        getElementById("email").value = "";
         alert("✅ Message sent successfully!");
-        console.log(document.getElementById("name").value);
-        console.log(document.getElementById("email").value);
-        console.log(document.getElementById("phone").value);
-
-        console.log("SUCCESS!", response.status, response.text);
+ 
     }, function (error) {
         alert("❌ Failed to send. Please try again.");
         console.log("FAILED...", error);
