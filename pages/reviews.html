@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../tailwind/outputd.css">
+    <!-- fontAwsoeme cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Review</title>
+</head>
+
+<body>
+    <header class="primary-background shadow-md">
+        <div class=" container mx-auto flex justify-between items-center px-4 py-4 h-[100px] relative ">
+            <!-- Logo -->
+            <a target="_blank" href="https://finestbookpublisher.com">
+                <img src="../logo.png" alt="Logo" class="h-[150px]" />
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="block lg:hidden focus:outline-none" id="menu-btn">
+                <i class="fa-solid fa-bars text-3xl text-white"></i>
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav id="menu"
+                class="hidden absolute top-20 left-0 w-full   md:static md:w-auto lg:flex md:items-center md:space-x-6 transition-all duration-300">
+                <ul class="flex flex-col md:flex-row md:items-center text-white font-medium">
+                    <li><a href="../pages/about-us.html" class="block px-4 py-2 hover:text-blue-600">ABOUT US</a></li>
+
+                    <!-- Dropdown 1 -->
+                    <li class="group relative">
+                        <button
+                            class="flex items-center justify-between w-full px-4 py-2 hover:text-blue-600 md:justify-start">
+                            Finest Writing
+                            <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                        <ul
+                            class="hidden group-hover:block text-black  absolute left-0 mt-1 bg-white shadow-lg rounded-md z-50 w-48 text-sm">
+                            <li><a href="./finest-writing/speech-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Speech Writing</a></li>
+                            <li><a href="./finest-writing/memoir-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Memoir Writing</a></li>
+                            <li><a href="./finest-writing/biography-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Biography Writing</a></li>
+                            <li><a href="./finest-writing/novel-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Novel Writing</a></li>
+                            <li><a href="./finest-writing/non-fiction.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Non-Fiction</a></li>
+                            <li><a href="./finest-writing/fitness-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Fitness Writing</a></li>
+                            <li><a href="./finest-writing/cookbook-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Cook Books Writing</a></li>
+                            <li><a href="./finest-writing/comic-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Comic Writing</a></li>
+                            <li><a href="./finest-writing/children-book-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Children Book Writing</a></li>
+                            <li><a href="./finest-writing/autobiography-writing.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Autobiography Writing</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown 2 -->
+                    <li class="group relative">
+                        <button
+                            class="flex items-center justify-between w-full px-4 py-2 hover:text-blue-600 md:justify-start">
+                            Editing & Formatting
+                            <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                        <ul
+                            class="hidden group-hover:block absolute left-0 mt-1 bg-white shadow-lg rounded-md z-10 w-48 text-sm">
+                            <li><a href="./editing-and-formatting/book-editing.html"
+                                    class="text-black block px-4 py-2 hover:bg-gray-100">Book Editing</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown 3 -->
+                    <li class="group relative">
+                        <button
+                            class="flex items-center justify-between w-full px-4 py-2 hover:text-blue-600 md:justify-start">
+                            Other Services
+                            <i class="fa fa-chevron-down ml-1"></i>
+                        </button>
+                        <ul
+                            class="hidden group-hover:block absolute left-0 mt-1 bg-white shadow-lg rounded-md z-10 w-48 text-sm">
+                            <li><a href="./other-services/book-publishing.html"
+                                    class="text-black  block px-4 py-2 hover:bg-gray-100">Book Publishing</a>
+                            </li>
+                            <li><a href="./other-services/cover-design.html"
+                                    class="text-black block px-4 py-2 hover:bg-gray-100">Cover Design</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="./contact-us.html" class="block px-4 py-2 hover:text-blue-600">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA Section -->
+            <div
+                class="hidden lg:flex flex-col  justify-between text-white  items-start gap-3 border-l-2 pl-2  border-gray-500">
+
+                <div class="mt-2 text-sm text-white text-left border-b-2 border-gray-500 w-full pb-2">
+                    <a href="tel:+18324646607" class="text-left "><i class="fa fa-phone mr-1"></i> +1 (832) 464-6607</a>
+                </div>
+                <a href="mailto:hello@finestbookpublisher.com" class="text-left"><i
+                        class="fa fa-envelope mr-1 pb-1"></i>
+                    hello@finestbookpublisher.com</a>
+            </div>
+        </div>
+
+
+        <!-- Mobile Menu (Hidden on Desktop) -->
+        <nav id="mobile-menu"
+            class="hidden  fixed top-[100px] left-0 w-full bg-white text-[#1D4582] shadow-lg  overflow-hidden transition-all duration-300 z-50">
+
+            <ul class="flex flex-col font-medium w-full">
+
+                <li>
+                    <a href="../pages/about-us.html" class="block px-6 py-3 border-b border-[#1D4582]/20">
+                        ABOUT US
+                    </a>
+                </li>
+
+                <!-- Mobile Dropdown 1 -->
+                <li class="border-b border-[#1D4582]/20">
+                    <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+                        Finest Writing
+                        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+                    </button>
+                    <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+                        <li><a href="./finest-writing/speech-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Speech Writing</a></li>
+                        <li><a href="./finest-writing/memoir-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Memoir Writing</a></li>
+                        <li><a href="./finest-writing/biography-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Biography Writing</a></li>
+                        <li><a href="./finest-writing/novel-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Novel Writing</a></li>
+                        <li><a href="./finest-writing/non-fiction.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Non-Fiction</a></li>
+                        <li><a href="./finest-writing/fitness-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Fitness Writing</a></li>
+                        <li><a href="./finest-writing/cookbook-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Cook Books Writing</a></li>
+                        <li><a href="./finest-writing/comic-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Comic Writing</a></li>
+                        <li><a href="./finest-writing/children-book-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Children Book Writing</a></li>
+                        <li><a href="./finest-writing/autobiography-writing.html"
+                                class="block px-4 py-2 hover:bg-gray-100">Autobiography Writing</a></li>
+
+                    </ul>
+                </li>
+
+                <!-- Mobile Dropdown 2 -->
+                <li class="border-b border-[#1D4582]/20">
+                    <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+                        Editing & Formatting
+                        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+                    </button>
+                    <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+                        <li><a href="./editing-and-formatting/book-editing.html"
+                                class="block px-6 py-3 border-b hover:bg-gray-200">Book Editing</a></li>
+                    </ul>
+                </li>
+
+                <!-- Mobile Dropdown 3 -->
+                <li class="border-b border-[#1D4582]/20">
+                    <button class="w-full flex justify-between items-center px-6 py-3 dropdown-btn text-[#1D4582]">
+                        Other Services
+                        <i class="fa fa-chevron-down text-[#1D4582]"></i>
+                    </button>
+                    <ul class="dropdown-menu hidden bg-gray-50 text-[#1D4582]">
+                        <li><a href="./other-services/book-publishing.html"
+                                class="block px-6 py-3 border-b hover:bg-gray-200">Book Publishing</a></li>
+                        <li><a href="./other-services/cover-design.html" class="block px-6 py-3 hover:bg-gray-200">Cover
+                                Design</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="./contact.html" class="block px-6 py-3">
+                        CONTACT
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+
+    </header>
+
+
+
+
+
+
+
+    <main>
+
+        <!-- hero section -->
+
+        <section
+            class="relative w-full h-[600px]  md:h-screen bg-linear-to-b from-[#1D4582] to-blue-300 flex flex-col justify-center items-center text-center overflow-hidden">
+
+            <!-- Decorative Floating Icons (WHITE) -->
+            <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png"
+                class="absolute top-14 left-10 w-16 opacity-[15] invert animate-[float_6s_ease-in-out_infinite]"
+                alt="Book">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/1250/1250615.png"
+                class="absolute bottom-36 right-14 w-14 opacity-[12] invert animate-[float_5s_ease-in-out_infinite]"
+                alt="Pen">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/69/69955.png"
+                class="hidden  absolute top-1/3 left-1/6 w-12 opacity-[1] invert animate-[float_7s_ease-in-out_infinite] md:flex"
+                alt="Feather">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png"
+                class="hidden absolute top-24 right-1/6 w-16 opacity-[10] invert animate-[float_8s_ease-in-out_infinite] md:flex"
+                alt="Open Book">
+
+
+            <i class="opacity-0 fa fa-star text-6xl absolute bottom-24 left-1/4 w-12 md:opacity-[10] invert 
+      md:block animate-[float_8s_ease-in-out_infinite]"></i>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png"
+                class="hidden absolute bottom-10 right-1/4 w-14 opacity-[12] invert animate-[float_7s_ease-in-out_infinite] md:flex"
+                alt="Writing Hand">
+
+            <!-- Centered Content -->
+            <div class="px-6 max-w-4xl z-10">
+                <h1 class="text-2xl sm:text-5xl   font-bold text-white mb-6 leading-tight">
+                    What Our Clients Say About Us
+                </h1>
+                <p class="text-white/80 text-lg sm:text-xl mb-8">
+                    Hear from authors, entrepreneurs, creators, and businesses who trusted us with their stories.
+                    Real experiences, real results shared by clients who turned their ideas into powerful, beautifully
+                    crafted books with our team.
+                </p>
+
+                <!-- Button -->
+                <a href="../pages/contact-us.html"
+                    class="inline-flex items-center gap-3 bg-white/10 px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition">
+                    <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white text-lg">
+                        <i class="fa fa-arrow-right"></i>
+                    </div>
+                    <span class="text-white font-medium">Get An Enquiry</span>
+                </a>
+            </div>
+
+            <!-- Bottom Curve -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+                <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,0 C720,120 720,120 1440,0 L1440,120 L0,120 Z" fill="white" />
+                </svg>
+            </div>
+        </section>
+        <!-- hero section -->
+
+        <!--  -->
+        <!-- Testimonials Section -->
+        <section class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6 text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-extrabold text-gray-900 mb-4">What Our <span class="text-[#1D4582]">Clients Says</span></h2>
+                <p class="text-gray-700 max-w-2xl mx-auto">
+                    Real stories from authors who trusted us to bring their books to life.
+                </p>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+
+                <!-- CARD TEMPLATE (Repeated with different content) -->
+                <!-- Card 1 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg border border-white/40 hover:shadow-2xl hover:shadow-[#1D4582]/50  hover:-translate-y-1 transition"
+                    data-aos="fade-up">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“Amazing experience! My book transformed from a rough draft
+                        into a polished masterpiece.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Sarah Johnson</h4>
+                    <p class="text-sm text-gray-500">Author • Fiction Novel</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“Professional, fast, and incredibly insightful. This team
+                        exceeded every expectation.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Michael Green</h4>
+                    <p class="text-sm text-gray-500">Business Author</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:-shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“Their editing and publishing support made my journey smooth
+                        and stress-free.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Alicia Moore</h4>
+                    <p class="text-sm text-gray-500">Memoir Writer</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“I will definitely work with them again. My book finally feels
+                        professionally crafted.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Daniel Carter</h4>
+                    <p class="text-sm text-gray-500">Self-Help Author</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“Every chapter improved. The editors understood my tone
+                        perfectly.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Rebecca Miles</h4>
+                    <p class="text-sm text-gray-500">Romance Author</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“Perfect balance of creativity and professionalism. Highly
+                        recommended.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">John Peterson</h4>
+                    <p class="text-sm text-gray-500">Children’s Book Author</p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“Their support made the entire publishing process incredibly
+                        smooth.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Emily Rogers</h4>
+                    <p class="text-sm text-gray-500">Non-Fiction Author</p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“From day one, they treated my book like their own. Remarkable
+                        experience.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Kevin Price</h4>
+                    <p class="text-sm text-gray-500">Thriller Author</p>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“I never expected such improvement. My messaging is now clearer
+                        and stronger.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Laura Bennett</h4>
+                    <p class="text-sm text-gray-500">Motivational Writer</p>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“Their creative suggestions took my book to the next level.”
+                    </p>
+                    <h4 class="text-lg font-semibold text-gray-900">Chris Wallace</h4>
+                    <p class="text-sm text-gray-500">Sci-Fi Author</p>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“Very impressed with the quality and professionalism
+                        throughout.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Natalie Summers</h4>
+                    <p class="text-sm text-gray-500">Biography Author</p>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="bg-white/60 backdrop-blur-lg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#1D4582]/50 border border-white/40 hover:-translate-y-1 transition"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center mb-3">
+                        <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i><i
+                            class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">“They truly care about your book. Excellent team and great
+                        results.”</p>
+                    <h4 class="text-lg font-semibold text-gray-900">Oliver Adams</h4>
+                    <p class="text-sm text-gray-500">Historical Writer</p>
+                </div>
+
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <footer class="bg-[#1D4582] text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
+
+            <!-- Left Section -->
+            <div data-aos="fade-right">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-snug">
+                    Crafting Stories, <strong>Now Just a Click Away</strong>
+                </h2>
+
+                <ul class="mb-6 space-y-3">
+                    <li>
+                        <a href="mailto:Hello@finestbookpublisher.com" class="hover:text-blue-300">
+                            Hello@finestbookpublisher.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+18324646607" class="hover:text-blue-300">+1 (832) 464-6607</a>
+                    </li>
+                </ul>
+
+                <ul class="flex space-x-4 mt-4">
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61583069261828" target="_blank"
+                            class="hover:text-blue-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/finestbook_publisher/" target="_blank"
+                            class="hover:text-blue-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="hover:text-blue-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Section -->
+            <div data-aos="fade-left" class="grid md:grid-cols-3 gap-8">
+
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-lg">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Cover Design</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Fantasy Writing</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Horror Writing</a></li>
+                        <li><a href="#" class="hover:text-blue-300">SCI-FI Writing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-lg">Ghostwriting</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Non-Fiction</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Biography Writing</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Memoir Writing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-lg">Book Editing & Publishing</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Formatting</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Book Publishing</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="border-t border-white/30 mt-8 pt-6 text-center text-gray-200 text-sm">
+            <p>700 Smith St, Houston, TX, United States, Texas</p>
+            <p>© 2025 Finest Book Publishers. All Rights Reserved</p>
+            <p class="mt-2 font-medium">Embark Your Journey with Our Sales-Driven Book Writing Services!</p>
+        </div>
+
+        <!-- Footer Decorative Image -->
+        <img src="https://merriampublishers.com/assets/images/footer-img.png" alt=""
+            class="absolute right-0 bottom-0 w-32 md:w-48 opacity-20 pointer-events-none">
+
+    </footer>
+
+
+    <script>
+        // Mobile Menu Toggle
+
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+        const menuBtn = document.querySelector("#menu-btn");
+        const mobileMenu = document.querySelector("#mobile-menu");
+
+        // Toggle main mobile menu
+        menuBtn.addEventListener("click", () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                // mobileMenu.style.display = mobileMenu.scrollHeight + "px";
+            }
+        });
+
+        // Dropdown accordions
+        const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+
+        dropdownBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const menu = btn.nextElementSibling;
+
+                if (menu.classList.contains("hidden")) {
+                    menu.classList.remove("hidden");
+
+                } else {
+                    menu.classList.add("hidden");
+                }
+            });
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
