@@ -23,3 +23,7 @@
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
   }
+
+    .accent-gold {
+      background: linear-gradient(90deg, #ffb86b, #ff9c3b);
+    }
